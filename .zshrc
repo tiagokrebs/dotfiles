@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+DEFAULT_USER="krebs"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -91,10 +93,6 @@ echo "$(cat $HOME/banner)" | lolcat
 #   export EDITOR='mvim'
 # fi
 
-# User
-EDITOR='nvim'
-
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -107,11 +105,14 @@ EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"]
 
+alias proj='cd ~/Projects/'
+alias blog='cd ~/Projects/tiagokrebs.github.io.dev/'
+
 # Shorten path displayed in prompt to current and parent directory
 prompt_dir () {
  prompt_segment blue $CURRENT_FG '%2~'
 }
 
 # Suppress computer and user name from prompt
-prompt_context () { }
+# prompt_context () { }
 
