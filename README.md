@@ -11,12 +11,15 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 ## NeoVim
 NeoVim (0.7) https://github.com/neovim/neovim/wiki/Installing-Neovim  
 NerdFonts https://github.com/ronniedroid/getnf  
-Ripgrep  
+https://github.com/JohnnyMorganz/StyLua
+  
 ```
-sudo dnf install ripgrep
+sudo dnf install ripgrep python3-black
+
+pip install flake8  
+
 ```  
 Open nvim  
 ```
 :PackerSync
 ```  
-

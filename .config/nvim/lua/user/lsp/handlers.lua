@@ -84,6 +84,15 @@ M.on_attach = function(client, bufnr)
       return
     end
 
+    if client.name == "tsserver" then
+      client.resolved_capabilities.document_formatting = false
+    end
+
+    if client.name == "sumneko_lua" then
+      client.resolved_capabilities.document_formatting = false
+    end
+
+
     M.capabilities.textDocument.completion.completionItem.snippetSupport = true
     M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
