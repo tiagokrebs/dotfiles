@@ -4,51 +4,19 @@ if not status_ok then
 end
 
 local servers = {
-  "cssls",
-  "cssmodules_ls",
-  "emmet_ls",
-  "html",
-  -- "jdtls",
-  "jsonls",
-  "solc",
   "sumneko_lua",
-  "tflint",
+  "cssls",
+  "html",
   "tsserver",
   "pyright",
-  "yamlls",
   "bashls",
-  "clangd",
+  "jsonls",
+  "yamlls",
+  "rust_analyzer",
+  "taplo",
 }
 
-local settings = {
-  ensure_installed = servers,
-  -- automatic_installation = false,
-  ui = {
-    icons = {
-      -- server_installed = "◍",
-      -- server_pending = "◍",
-      -- server_uninstalled = "◍",
-      -- server_installed = "✓",
-      -- server_pending = "➜",
-      -- server_uninstalled = "✗",
-    },
-    keymaps = {
-      toggle_server_expand = "<CR>",
-      install_server = "i",
-      update_server = "u",
-      check_server_version = "c",
-      update_all_servers = "U",
-      check_outdated_servers = "C",
-      uninstall_server = "X",
-    },
-  },
-
-  log_level = vim.log.levels.INFO,
-  -- max_concurrent_installers = 4,
-  -- install_root_dir = path.concat { vim.fn.stdpath "data", "lsp_servers" },
-}
-
-lsp_installer.setup(settings)
+lsp_installer.setup()
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
@@ -73,23 +41,56 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
-  if server == "solang" then
-    local solang_opts = require "user.lsp.settings.solang"
-    opts = vim.tbl_deep_extend("force", solang_opts, opts)
-  end
+  if server == "rust_analyzer" then
+    local keymap = vim.keymap.set
+    local key_opts = { silent = true }
 
-  if server == "solc" then
-    local solc_opts = require "user.lsp.settings.solc"
-    opts = vim.tbl_deep_extend("force", solc_opts, opts)
-  end
+    keymap("n", "<leader>rh", "<cmd>RustSetInlayHints<Cr>", key_opts)
+    keymap("n", "<leader>rhd", "<cmd>RustDisableInlayHints<Cr>", key_opts)
+    keymap("n", "<leader>th", "<cmd>RustToggleInlayHints<Cr>", key_opts)
+    keymap("n", "<leader>rr", "<cmd>RustRunnables<Cr>", key_opts)
+    keymap("n", "<leader>rem", "<cmd>RustExpandMacro<Cr>", key_opts)
+    keymap("n", "<leader>roc", "<cmd>RustOpenCargo<Cr>", key_opts)
+    keymap("n", "<leader>rpm", "<cmd>RustParentModule<Cr>", key_opts)
+    keymap("n", "<leader>rjl", "<cmd>RustJoinLines<Cr>", key_opts)
+    keymap("n", "<leader>rha", "<cmd>RustHoverActions<Cr>", key_opts)
+    keymap("n", "<leader>rhr", "<cmd>RustHoverRange<Cr>", key_opts)
+    keymap("n", "<leader>rmd", "<cmd>RustMoveItemDown<Cr>", key_opts)
+    keymap("n", "<leader>rmu", "<cmd>RustMoveItemUp<Cr>", key_opts)
+    keymap("n", "<leader>rsb", "<cmd>RustStartStandaloneServerForBuffer<Cr>", key_opts)
+    keymap("n", "<leader>rd", "<cmd>RustDebuggables<Cr>", key_opts)
+    keymap("n", "<leader>rv", "<cmd>RustViewCrateGraph<Cr>", key_opts)
+    keymap("n", "<leader>rw", "<cmd>RustReloadWorkspace<Cr>", key_opts)
+    keymap("n", "<leader>rss", "<cmd>RustSSR<Cr>", key_opts)
+    keymap("n", "<leader>rxd", "<cmd>RustOpenExternalDocs<Cr>", key_opts)
 
-  if server == "emmet_ls" then
-    local emmet_ls_opts = require "user.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+    require("rust-tools").setup {
+      tools = {
+        on_initialized = function()
+          vim.cmd [[
+            autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+          ]]
+        end,
+      },
+      server = {
+        on_attach = require("user.lsp.handlers").on_attach,
+        capabilities = require("user.lsp.handlers").capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            lens = {
+              enable = true,
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+      },
+    }
+
+    goto continue
   end
 
   lspconfig[server].setup(opts)
+  ::continue::
 end
-
--- TODO: add something to installer later
--- require("lspconfig").motoko.setup {}
