@@ -1,21 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-DEFAULT_USER="krebs"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-export ZSH=$HOME/.oh-my-zsh
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO=$HOME/.cargo/bin
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="agnoster"
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -84,8 +80,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR='nvim'
+export PATH="$HOME/.npm/bin:$PATH"
 
-echo "$(cat $HOME/banner)" | lolcat
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -106,18 +102,10 @@ echo "$(cat $HOME/banner)" | lolcat
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"]
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+echo "$(cat $HOME/banner)" | lolcat
 
-alias proj='cd ~/Projects/'
-alias blog='cd ~/Projects/tiagokrebs.github.io.dev/'
-
-# Shorten path displayed in prompt to current and parent directory
-prompt_dir () {
- prompt_segment blue $CURRENT_FG '%2~'
-}
-
-# Suppress computer and user name from prompt
-# prompt_context () { }
+alias proj='cd ~/Documents/Projetos'
 
