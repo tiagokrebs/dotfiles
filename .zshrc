@@ -107,5 +107,5 @@ export PATH="$HOME/.npm/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 echo "$(cat $HOME/banner)" | lolcat
 
-alias proj='cd ~/Documents/Projetos'
+alias proj='cd ~/Projetos/'
 
