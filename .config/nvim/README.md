@@ -61,6 +61,13 @@ Make sure the formatter or linter is installed and add it to this setup function
 
 Some are already setup as examples
 
+
+## Debugger
+```
+sudo apt install lldb
+```
+For Ubuntu Follow [this thread](https://stackoverflow.com/a/72386036)
+
 ---
 
 > The computing scientist's main challenge is not to get confused by the complexities of his own making. 

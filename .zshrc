@@ -5,8 +5,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export CARGO=$HOME/.cargo/bin
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO
+export CARGO_HOME=$HOME/.cargo
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO_HOME/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,4 +108,5 @@ export PATH="$HOME/.npm/bin:$PATH"
 echo "$(cat $HOME/banner)" | lolcat
 
 alias proj='cd ~/Projetos/'
-
+alias vpnc='~/./nordvpn.sh c'
+alias vpnd='~/./nordvpn.sh d'
