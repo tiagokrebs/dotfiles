@@ -2,7 +2,7 @@
 
 ## Neovim 0.7
 ```
-./install_neovim.sh
+./neovim_install.sh
 ```
 
 Run `nvim` and wait for the plugins to be installed 
@@ -60,13 +60,6 @@ and press `i` on the Language Server you wish to install
 Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/null-ls.lua#L13)
 
 Some are already setup as examples
-
-
-## Debugger
-```
-sudo apt install lldb
-```
-For Ubuntu Follow [this thread](https://stackoverflow.com/a/72386036)
 
 ---
 

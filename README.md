@@ -14,3 +14,7 @@ https://github.com/jesseduffield/lazygit#installation
 
 ## Neovim
 See .config/nvim
+
+## Kitty
+https://github.com/kovidgoyal/kitty
+
