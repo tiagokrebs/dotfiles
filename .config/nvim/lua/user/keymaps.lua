@@ -32,18 +32,19 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Close buffers
+--keymap("n", "<S-q>", "<cmd>:Bdelete!<CR>", opts)
+keymap("n", "<leader>q", "<cmd>:Bdelete<CR>", opts)
+
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
 -- Better paste
-keymap("v", "p", '"_dP', opts)
+--keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+--keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -53,16 +54,17 @@ keymap("v", ">", ">gv", opts)
 -- Plugins --
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>lg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", opts)
 
 -- Comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
