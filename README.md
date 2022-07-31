@@ -21,7 +21,7 @@ rm -rf lazygit.tar.gz
 lazygit --version
 ```
 
-## Nheovim
+## Neovim
 See .config/nvim
 
 ## Kitty
