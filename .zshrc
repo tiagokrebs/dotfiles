@@ -110,3 +110,4 @@ echo "$(cat $HOME/banner)" | lolcat
 alias proj='cd ~/Projetos/'
 alias vpnc='~/./nordvpn.sh c'
 alias vpnd='~/./nordvpn.sh d'
+alias gst='git status'
