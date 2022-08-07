@@ -5,8 +5,14 @@
 sudo dnf install zsh
 sudo apt-get install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/dracula/zsh.git $ZSH_CUSTOM/themes/dracula
+ln -s $ZSH_CUSTOM/themes/dracula/dracula.zsh-theme $ZSH_CUSTOM/themes/dracula.zsh-theme
+
+git clone https://github.com/dracula/zsh-syntax-highlighting.git $ZSH_CUSTOM/highlight/dracula
 ```
 
 ## Lazygit
