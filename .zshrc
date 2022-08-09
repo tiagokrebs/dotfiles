@@ -7,6 +7,8 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO_HOME=$HOME/.cargo
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO_HOME/bin
+# for MacOS + Kitty backspace on terminal bug
+# export TERM=xterm
 
 source $ZSH/custom/highlight/dracula/zsh-syntax-highlighting.sh
 
