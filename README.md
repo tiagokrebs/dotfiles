@@ -1,5 +1,10 @@
 # Dotfiles
 
+## Kitty
+```
+git clone https://github.com/dracula/kitty.git ~/.config/kitty/themes/dracula
+```
+
 ## zsh
 ```
 sudo dnf install zsh
