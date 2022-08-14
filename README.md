@@ -31,6 +31,8 @@ sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 rm -rf lazygit.tar.gz
 lazygit --version
 ```
+## Emacs
+https://github.com/doomemacs/doomemacs#install
 
 ## Neovim
 See .config/nvim
