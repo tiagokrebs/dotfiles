@@ -34,6 +34,12 @@ lazygit --version
 ## Emacs
 https://github.com/doomemacs/doomemacs#install
 
+Ubuntu  
+See .config/autostart.
+```
+cp .config/doom/ubuntu/emacsclient.desktop /usr/share/applications/emacsclient.desktop
+```
+
 ## Neovim
 See .config/nvim
 

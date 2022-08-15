@@ -6,11 +6,10 @@ export ZSH="$HOME/.oh-my-zsh"
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO_HOME=$HOME/.cargo
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO_HOME/bin
-# for MacOS + Kitty backspace on terminal bug
-# export TERM=xterm
+export DOOM=$HOME/.emacs.d
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO_HOME/bin:$DOOM/bin
 
-source $ZSH/custom/highlight/dracula/zsh-syntax-highlighting.sh
+# source $ZSH/custom/highlight/dracula/zsh-syntax-highlighting.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -84,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR='nvim'
-export PATH="$HOME/.npm/bin:$PATH"
+#export PATH="$HOME/.npm/bin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -115,3 +114,5 @@ alias proj='cd ~/Projetos/'
 alias vpnc='~/./nordvpn.sh c'
 alias vpnd='~/./nordvpn.sh d'
 alias gst='git status'
+alias emacs="emacsclient -c -a 'emacs'"
+
