@@ -115,4 +115,4 @@ alias vpnc='~/./nordvpn.sh c'
 alias vpnd='~/./nordvpn.sh d'
 alias gst='git status'
 alias emacs="emacsclient -c -a 'emacs'"
-
+alias em="emacs -nw"
