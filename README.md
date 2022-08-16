@@ -36,8 +36,15 @@ https://github.com/doomemacs/doomemacs#install
 
 Ubuntu  
 See .config/autostart.
-```
+```sh
 cp .config/doom/ubuntu/emacsclient.desktop /usr/share/applications/emacsclient.desktop
+```
+
+MacOs
+See .config/autostart. Copy plist to the path below.
+```sh
+launchctl unload -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
+launchctl load -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
 ```
 
 ## Neovim
