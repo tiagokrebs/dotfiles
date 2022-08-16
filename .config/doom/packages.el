@@ -47,8 +47,6 @@
 ;; ...or multiple packages
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
-;(unpin! t)]
-;
-(package! beacon)
+;(unpin! t)
+
 (package! evil-tutor)
-(package! org-auto-tangle)
