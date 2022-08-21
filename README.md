@@ -31,7 +31,10 @@ sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 rm -rf lazygit.tar.gz
 lazygit --version
 ```
-## Emacs
+
+## GNU Emacs
+
+## Doom Emacs
 https://github.com/doomemacs/doomemacs#install
 
 Ubuntu  
