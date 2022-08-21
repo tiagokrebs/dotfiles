@@ -80,3 +80,40 @@
 
 ;; start every frame maximized
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; centaur-tabs
+(setq centaur-tabs-style "bar"
+      centaur-tabs-height 16
+      centaur-tabs-set-icons nil)
+
+;; rust-analyzer
+(after! rustic
+  (setq lsp-rust-server 'rust-analyzer)
+  (setq lsp-rust-analyzer-server-display-inlay-hints t))
+
+;; lsp-ui
+(after! lsp-ui
+  (setq lsp-ui-doc-enable t)
+  (setq lsp-ui-doc-show-with-mouse t)
+  (setq lsp-ui-sideline-enable t)
+  (setq lsp-ui-sideline-show-code-actions t)
+  (setq lsp-ui-sideline-show-hover t))
+
+;; modeline
+(after! doom-modeline
+  (setq doom-modeline-major-mode-icon t)
+;  (setq doom-modeline-github t)
+  (setq all-the-icons-scale-factor 1.0)
+;  (doom-modeline-def-modeline 'main
+;    '(bar matches buffer-info remote-host buffer-position parrot selection-info)
+;    '(misc-info minor-modes checker input-method buffer-encoding major-mode process vcs "  ")) ; <-- added padding here
+  (setq doom-modeline-height 1) ; optional
+  (custom-set-faces
+   '(mode-line ((t (:family "Noto Sans" :height 0.9))))
+   '(mode-line-active ((t (:family "Noto Sans" :height 0.9)))) ; For 29+
+   '(mode-line-inactive ((t (:family "Noto Sans" :height 0.9)))))
+  )
+
+;; writer-room
+;;(setq writeroom-fullscreen-effect t)
+(add-hook 'window-setup-hook #'toggle-frame-fullscreen)
