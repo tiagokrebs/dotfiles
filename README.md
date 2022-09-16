@@ -1,6 +1,7 @@
 # Dotfiles
 
 ## Kitty
+https://github.com/kovidgoyal/kitty
 ```
 git clone https://github.com/dracula/kitty.git ~/.config/kitty/themes/dracula
 ```
@@ -8,7 +9,13 @@ git clone https://github.com/dracula/kitty.git ~/.config/kitty/themes/dracula
 ## zsh
 ```
 sudo dnf install zsh
-sudo apt-get install zsh
+
+sudo apt install zsh
+
+brew install zsh
+``````
+
+```
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
@@ -32,10 +39,8 @@ rm -rf lazygit.tar.gz
 lazygit --version
 ```
 
-## GNU Emacs
-
 ## Doom Emacs
-https://github.com/doomemacs/doomemacs#install
+https://github.com/doomemacs/doomemacs#installation
 
 Ubuntu  
 See .config/autostart.
@@ -50,9 +55,16 @@ launchctl unload -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
 launchctl load -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
 ```
 
+------
+## Old Stuff
+<details>
+<summary>Things that I don't use anymore</summary>
+
 ## Neovim
 See .config/nvim
 
-## Kitty
-https://github.com/kovidgoyal/kitty
+## GNU Emacs
+See .emacs.d
+
+</details>
 
