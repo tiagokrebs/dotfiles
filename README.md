@@ -39,6 +39,17 @@ rm -rf lazygit.tar.gz
 lazygit --version
 ```
 
+## GNU Emacs
+See .config/emacs
+
+------
+## Old Stuff
+<details>
+<summary>Things that I don't use anymore</summary>
+
+## Neovim
+See .config/nvim
+
 ## Doom Emacs
 https://github.com/doomemacs/doomemacs#installation
 
@@ -54,17 +65,5 @@ See .config/autostart. Copy plist to the path below.
 launchctl unload -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
 launchctl load -w ~/Library/LaunchAgents/gnu.emacs.daemon.plist
 ```
-
-------
-## Old Stuff
-<details>
-<summary>Things that I don't use anymore</summary>
-
-## Neovim
-See .config/nvim
-
-## GNU Emacs
-See .emacs.d
-
 </details>
 
