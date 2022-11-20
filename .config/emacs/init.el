@@ -15,6 +15,11 @@
 (tooltip-mode -1)
 (set-fringe-mode 10)
 
+;; Fix title bar
+(setq default-frame-alist '((undecorated . t)))
+(add-to-list 'default-frame-alist '(drag-internal-border . 1))
+(add-to-list 'default-frame-alist '(internal-border-width . 5))
+
 ;; Display line numbers in every buffer
 (global-display-line-numbers-mode 1)
 
@@ -403,10 +408,9 @@
   ("f" nil "finished" :exit t))
 
 ;;; Code
-;; breadcrumb
-;(defun efs/lsp-mode-setup ()
-;  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-;  (lsp-headerline-breadcrumb-mode))
+
+;; focus
+(use-package focus)
 
 ;; comment
 (use-package evil-nerd-commenter
@@ -460,6 +464,7 @@
   (lsp-rust-analyzer-display-closure-return-type-hints t)
   (lsp-rust-analyzer-display-parameter-hints nil)
   (lsp-rust-analyzer-display-reborrow-hints nil)
+  (lsp-headerline-breadcrumb-enable nil)
   :config
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
 
@@ -470,6 +475,11 @@
   (lsp-ui-peek-always-show t)
   (lsp-ui-sideline-show-hover t)
   (lsp-ui-doc-enable nil))
+
+;; breadcrumb
+;(defun efs/lsp-mode-setup ()
+;  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+;  (lsp-headerline-breadcrumb-mode))
 
 (use-package company
   :ensure
@@ -498,3 +508,5 @@
 ;; lsp-ivy
 (use-package lsp-ivy)
 
+;; markdown-preview
+(use-package markdown-preview-mode)

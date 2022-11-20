@@ -7,7 +7,7 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export CARGO_HOME=$HOME/.cargo
 export DOOM=$HOME/.emacs.d
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGO_HOME/bin:$DOOM/bin
+export PATH=$PATH:$HOME/.local/bin/:$GOROOT/bin:$GOPATH/bin:$CARGO_HOME/bin:$DOOM/bin
 
 # source $ZSH/custom/highlight/dracula/zsh-syntax-highlighting.sh
 
@@ -108,7 +108,7 @@ export EDITOR='nvim'
 # aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-echo "$(cat $HOME/banner)" | lolcat
+echo "$(cat $HOME/banner)" | cat
 
 alias proj='cd ~/Projetos/'
 alias vpnc='~/./nordvpn.sh c'
