@@ -39,6 +39,12 @@ rm -rf lazygit.tar.gz
 lazygit --version
 ```
 
+## NordVPN
+```
+sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+```
+Set TOKEN on `nordvpn.sh`
+
 ## GNU Emacs
 See .config/emacs
 
