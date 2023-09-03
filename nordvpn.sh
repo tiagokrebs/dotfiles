@@ -5,7 +5,7 @@ NORD=$(which nordvpn)
 CURL=$(which curl)
 IPINFO='ipinfo.io'
 # https://support.nordvpn.com/Connectivity/Linux/1905092252/How-to-log-in-to-NordVPN-on-Linux-with-a-token.htm
-TOKEN=
+TOKEN=e9f2ab285255f61867aa3322c9a5240636c0336551664896b69bea0a42b40825
 
 if [ "$OPTION" == "c" ]
 then
