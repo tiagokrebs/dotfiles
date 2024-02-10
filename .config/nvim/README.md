@@ -18,6 +18,7 @@ brew install --cask font-space-mono-nerd-font
 sudo mac port install ripgrep fd
 ```
 
-https://www.lazyvim.org/installation
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
+https://www.lazyvim.org/installation  
+git clone https://github.com/LazyVim/starter ~/.config/nvim  
+rm -rf ~/.config/nvim/.git  
+
