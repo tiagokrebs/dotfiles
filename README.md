@@ -29,6 +29,10 @@ git clone https://github.com/dracula/zsh-syntax-highlighting.git $ZSH_CUSTOM/hig
 
 ## Lazygit
 https://github.com/jesseduffield/lazygit#installation
+```
+sudo port install lazygit
+```
+
 
 If not in the instalation list
 ```sh
@@ -45,16 +49,16 @@ sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 ```
 Set TOKEN on `nordvpn.sh`
 
-## GNU Emacs
-See .config/emacs
+## Neovim
+See .config/nvim
 
 ------
 ## Old Stuff
 <details>
 <summary>Things that I don't use anymore</summary>
 
-## Neovim
-See .config/nvim
+## GNU Emacs
+See .config/emacs
 
 ## Doom Emacs
 https://github.com/doomemacs/doomemacs#installation
