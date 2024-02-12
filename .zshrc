@@ -108,7 +108,8 @@ export EDITOR='nvim'
 # aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-echo "$(cat $HOME/banner)" | cat
+# echo "$(cat $HOME/banner)" | cat
+~/./banner.sh
 
 alias proj='cd ~/Projetos/'
 alias vpnc='~/./nordvpn.sh c'
