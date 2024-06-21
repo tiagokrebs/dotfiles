@@ -4,7 +4,7 @@
 frases=(
 	"Nada é nosso, exceto o tempo ~ Seneca"
 	"Tenha uma visão ~ Arnold"
-	"Trabalhe duro e divukgue ~ Arnold"
+	"Trabalhe duro e divulgue ~ Arnold"
 	"Não tenha um plano B ~ Arnold"
 	"Retribua ~ Arnold"
 	"Nada se faz sozinho ~ Arnold"
@@ -43,7 +43,12 @@ frases=(
 	"Escreva em detalhes todas as velhas lmebranças que ainda o perturbam ~ Peterson"
 	"Planeje e se esforce para manter o romance no seu relacionamento ~ Peterson"
 	"Não permita que você se torne ressentido, dissimulado ou arrogante ~ Peterson"
-	"Seja grato apesar do seu sofrimento"
+	"Seja grato apesar do seu sofrimento ~ Peterson"
+	"Fale, faça o trabalho determinado a você ou sofra do seu próprio inferno ~ Gênesis, Peterson"
+	"Seja moral, confie na sua intuição e salve não apenas você mas a humanidade ~ Gênesis, Peterson"
+	"Saia da zona de conforto, enfrente o inferno dos outros, e seja recompensado com continuidade e oportunidade ~ Fênesis, Peterson"
+	"You DO NOT hold your tongue in the face of god ~ Gênesis, Peterson"
+	"NÃO seghure a sua língua diante de deus ~ Gênesis, Peterson"
 )
 
 # Calcula o índice aleatório
