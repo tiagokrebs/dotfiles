@@ -9,13 +9,12 @@ sudo port install neovim
 ```
 
 ```
-brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 brew install --cask font-space-mono-nerd-font
 ```
 
 ```
-sudo mac port install ripgrep fd
+sudo port install ripgrep fd
 ```
 
 https://www.lazyvim.org/installation
