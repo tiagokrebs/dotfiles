@@ -33,7 +33,36 @@ return {
           },
         },
       })
-      -- Todo: Typescript
+      -- Typescript
+      require("lspconfig").ts_ls.setup({
+        settings = {
+          typescript = {
+            format = {
+              indentSize = 2,
+              convertTabsToSpaces = true,
+              tabSize = 2,
+            },
+          },
+          javascript = {
+            format = {
+              indentSize = 2,
+              convertTabsToSpaces = true,
+              tabSize = 2,
+            },
+          },
+        },
+      })
+      -- JSON
+      require("lspconfig").jsonls.setup({
+        settings = {
+          json = {
+            format = {
+              enable = true,
+            },
+            validate = { enable = true },
+          },
+        },
+      })
       -- Diagnostics configs
       vim.diagnostic.config({
         virtual_text = true,      -- set to false to disable inline diagnostics
@@ -55,11 +84,9 @@ return {
   -- Mason LSP bridge
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup(
-      -- { ensure_installed = { "tsserver"} }
-      )
-    end,
+    --    config = function()
+    --      require("mason-lspconfig").setup()
+    --    end,
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
   },
 }

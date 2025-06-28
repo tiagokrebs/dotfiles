@@ -1,7 +1,7 @@
--- Neovim Diagnostics
+-- Diagnostics
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
 
--- LSP Format
+-- Formatting 
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format({ async = true })
 end, {})
@@ -20,3 +20,20 @@ vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", {})
 -- Windows
 vim.keymap.set("n", "[w", "<C-w>p", {})
 vim.keymap.set("n", "]w", "<C-w>w", {})
+
+-- Copilot
+vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", {})
+
+-- Code Actions
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+vim.keymap.set('v', '<leader>ca', vim.lsp.buf.code_action, {})
+
+-- Git
+vim.keymap.set('n', '<leader>gg', "<cmd>LazyGit<CR>", {})
+
+-- Markdown
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", {})
+
+-- Jumps
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+

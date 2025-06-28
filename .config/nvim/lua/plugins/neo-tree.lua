@@ -31,15 +31,19 @@ return {
           icon = { enabled = false }
         },
         filesystem = {
+          bind_to_cwd = true,
+          cwd_target = {
+            sidebar = "window",
+            current = "window",
+          },
           filtered_items = {
             visible = true,
             hide_dotfiles = false,
             hide_gitignored = false,
           },
-        },
-        follow_current_file = {
-          enabled = true,
-          leave_dirs_open = false,
+          follow_current_file = {
+            enabled = true
+          },
         },
       })
     end,
