@@ -23,6 +23,7 @@ vim.keymap.set("n", "]w", "<C-w>w", {})
 
 -- Copilot
 vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", {})
+vim.keymap.set("n", "<leader>ccr", "<cmd>CopilotChatReset<CR>", {})
 
 -- Code Actions
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
@@ -36,4 +37,5 @@ vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", {})
 
 -- Jumps
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 

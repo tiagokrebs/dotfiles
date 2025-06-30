@@ -4,8 +4,15 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+      if cmp_ok then
+        capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+      end
+
       -- Python
       require("lspconfig").pylsp.setup({
+        capabilities = capabilities,
         settings = {
           pylsp = {
             plugins = {
@@ -21,8 +28,10 @@ return {
           },
         },
       })
+
       -- Lua
       require("lspconfig").lua_ls.setup({
+        capabilities = capabilities,
         settings = {
           Lua = {
             format = {
@@ -33,8 +42,10 @@ return {
           },
         },
       })
+
       -- Typescript
       require("lspconfig").ts_ls.setup({
+        capabilities = capabilities,
         settings = {
           typescript = {
             format = {
@@ -52,8 +63,10 @@ return {
           },
         },
       })
+
       -- JSON
       require("lspconfig").jsonls.setup({
+        capabilities = capabilities,
         settings = {
           json = {
             format = {

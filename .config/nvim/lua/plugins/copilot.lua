@@ -17,7 +17,7 @@ return {
     opts = {
       -- See Configuration section for options
       window = {
-        width = 0.3
+        width = 0.3,
       },
     },
     -- See Commands section for default commands if you want to lazy load on them
