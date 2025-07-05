@@ -1,7 +1,7 @@
 -- Diagnostics
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
 
--- Formatting 
+-- Formatting
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format({ async = true })
 end, {})
@@ -38,4 +38,3 @@ vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", {})
 -- Jumps
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-
