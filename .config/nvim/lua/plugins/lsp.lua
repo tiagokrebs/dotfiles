@@ -76,6 +76,19 @@ return {
           },
         },
       })
+
+      -- LTEX (Spell checker)
+      require("lspconfig").ltex.setup({
+        capabilities = capabilities,
+        settings = {
+          ltex = {
+            language = "en-US",
+            enabled = { "markdown", "text", "tex", "gitcommit", "python", "lua", "javascript", "typescript", "json" },
+            diagnosticSeverity = "information",
+          },
+        },
+      })
+
       -- Diagnostics configs
       vim.diagnostic.config({
         virtual_text = true,      -- set to false to disable inline diagnostics

@@ -8,7 +8,7 @@ return {
         "--color=never --type f --hidden --follow --exclude .git --exclude node_modules --exclude dist --exclude build --exclude coverage --exclude '*.js.map' --exclude '*.map'",
         formatter = "path.filename_first"
       },
-      buffers = { file_icons = false },
+      buffers = { file_icons = false, formatter = "path.filename_first" },
     })
     require('fzf-lua').register_ui_select()
   end,

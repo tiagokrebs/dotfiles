@@ -8,6 +8,8 @@ end, {})
 vim.api.nvim_create_user_command("Format", function()
   vim.lsp.buf.format({ async = true })
 end, {})
+vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true })
+vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true })
 
 -- Neo-tree
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
@@ -15,7 +17,8 @@ vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
 -- Fuzzy find
 vim.keymap.set("n", "<leader>ff", "<cmd>FzfLua files<CR>", {})
 vim.keymap.set("n", "<leader><leader>", "<cmd>FzfLua files<CR>", {})
-vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", {})
+vim.keymap.set("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", {})  
+vim.keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", {})
 
 -- Windows
 vim.keymap.set("n", "[w", "<C-w>p", {})
