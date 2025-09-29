@@ -45,6 +45,38 @@ return {
             enabled = true
           },
         },
+
+        window = {
+          mappings = {
+            -- Navigate to parent directory or previous parent sibling directory
+            ["<Left>"] = function(state)
+              local node = state.tree:get_node()
+              local parent = state.tree:get_node(node:get_parent_id())
+              if parent and parent.type == "directory" then
+                require("neo-tree.ui.renderer").focus_node(state, parent:get_id())
+              end
+            end,
+            -- Navigate to child directory or next parent sibling directory
+            ["<Right>"] = function(state)
+              local node = state.tree:get_node()
+              local parent = state.tree:get_node(node:get_parent_id())
+              if not parent then return end
+              local grandparent = state.tree:get_node(parent:get_parent_id())
+              if not grandparent then return end
+              -- Find next sibling of parent
+              local found = false
+              for _, child_id in ipairs(grandparent:get_child_ids()) do
+                if found and state.tree:get_node(child_id).type == "directory" then
+                  require("neo-tree.ui.renderer").focus_node(state, child_id)
+                  return
+                end
+                if child_id == parent:get_id() then
+                  found = true
+                end
+              end
+            end,
+          },
+        },
       })
     end,
   },

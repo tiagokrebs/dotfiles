@@ -10,16 +10,24 @@ return {
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
-      { "github/copilot.vim" },                       -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+      { "github/copilot.vim" },
+      { "nvim-lua/plenary.nvim", branch = "master" },
     },
-    build = "make tiktoken",                          -- Only on MacOS or Linux
-    opts = {
-      -- See Configuration section for options
-      window = {
-        width = 0.3,
-      },
-    },
-    -- See Commands section for default commands if you want to lazy load on them
+    build = "make tiktoken",
+    config = function()
+      vim.opt.splitright = true
+      require("CopilotChat").setup({
+        window = {
+          splitright = true,
+          width = 80,
+        },
+        prompts = {
+          AssistLogToEvent = {
+            prompt =
+            "Transform the JSON below into a structured JS event object. Don't add any addytional properties, comments or values. Use single quotes for string values.",
+          },
+        },
+      })
+    end,
   },
 }

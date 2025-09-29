@@ -10,7 +10,7 @@ return {
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
       end
 
-      -- Python
+      -- Pyhton
       require("lspconfig").pylsp.setup({
         capabilities = capabilities,
         settings = {
@@ -43,9 +43,10 @@ return {
         },
       })
 
-      -- Typescript
+      -- TypeScript / JavaScript
       require("lspconfig").ts_ls.setup({
         capabilities = capabilities,
+        root_dir = require("lspconfig.util").root_pattern(".git"),
         settings = {
           typescript = {
             format = {
@@ -77,17 +78,34 @@ return {
         },
       })
 
-      -- LTEX (Spell checker)
-      require("lspconfig").ltex.setup({
+      -- Markdown
+      require("lspconfig").marksman.setup({
         capabilities = capabilities,
-        settings = {
-          ltex = {
-            language = "en-US",
-            enabled = { "markdown", "text", "tex", "gitcommit", "python", "lua", "javascript", "typescript", "json" },
-            diagnosticSeverity = "information",
-          },
-        },
       })
+
+      -- -- Cspell (disabled by default, enable with keybind)
+      -- require("lspconfig.configs").cspell = {
+      --   default_config = {
+      --     cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/cspell-lsp"), "--stdio" },
+      --     filetypes = {
+      --       "lua", "python", "javascript", "typescript", "markdown", "text", "json",
+      --       "html", "css", "yaml", "gitcommit"
+      --     },
+      --     root_dir = require("lspconfig").util.root_pattern(".cspell.json", "cspell.config.js", ".git"),
+      --     single_file_support = true,
+      --     settings = {},
+      --   },
+      -- }
+      -- vim.keymap.set("n", "<leader>cs", function()
+      --   require("lspconfig").cspell.setup({
+      --     capabilities = capabilities,
+      --     init_options = {
+      --       configPath = vim.fn.expand("~/.cspell.json"),
+      --     },
+      --   })
+      --   vim.notify("Cspell enabled for this session", vim.log.levels.INFO)
+      -- end, { desc = "Enable Cspell LSP" })
+      --
 
       -- Diagnostics configs
       vim.diagnostic.config({
@@ -110,9 +128,17 @@ return {
   -- Mason LSP bridge
   {
     "williamboman/mason-lspconfig.nvim",
-    --    config = function()
-    --      require("mason-lspconfig").setup()
-    --    end,
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+          "ts_ls",
+          "pylsp",
+          "jsonls"
+        },
+        automatic_installation = true,
+      })
+    end,
     dependencies = { "williamboman/mason.nvim", "neovim/nvim-lspconfig" },
   },
 }
