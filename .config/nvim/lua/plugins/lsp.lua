@@ -13,6 +13,7 @@ return {
       -- Pyhton
       require("lspconfig").pylsp.setup({
         capabilities = capabilities,
+        -- cmd = { vim.fn.expand("./.venv/bin/python"), "-m", "pylsp" },
         settings = {
           pylsp = {
             plugins = {
