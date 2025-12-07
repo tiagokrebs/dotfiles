@@ -10,10 +10,10 @@ return {
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
       end
 
-      -- Pyhton
-      require("lspconfig").pylsp.setup({
+      -- Python
+      vim.lsp.config("pylsp", {
+        cmd = { "pylsp" },
         capabilities = capabilities,
-        -- cmd = { vim.fn.expand("./.venv/bin/python"), "-m", "pylsp" },
         settings = {
           pylsp = {
             plugins = {
@@ -31,7 +31,8 @@ return {
       })
 
       -- Lua
-      require("lspconfig").lua_ls.setup({
+      vim.lsp.config("lua_ls", {
+        cmd = { "lua-language-server" },
         capabilities = capabilities,
         settings = {
           Lua = {
@@ -45,7 +46,8 @@ return {
       })
 
       -- TypeScript / JavaScript
-      require("lspconfig").ts_ls.setup({
+      vim.lsp.config("ts_ls", {
+        cmd = { "typescript-language-server", "--stdio" },
         capabilities = capabilities,
         root_dir = require("lspconfig.util").root_pattern(".git"),
         settings = {
@@ -67,7 +69,8 @@ return {
       })
 
       -- JSON
-      require("lspconfig").jsonls.setup({
+      vim.lsp.config("jsonls", {
+        cmd = { "vscode-json-languageserver", "--stdio" },
         capabilities = capabilities,
         settings = {
           json = {
@@ -80,33 +83,13 @@ return {
       })
 
       -- Markdown
-      require("lspconfig").marksman.setup({
+      vim.lsp.config("marksman", {
+        cmd = { "marksman", "server" },
         capabilities = capabilities,
       })
 
-      -- -- Cspell (disabled by default, enable with keybind)
-      -- require("lspconfig.configs").cspell = {
-      --   default_config = {
-      --     cmd = { vim.fn.expand("~/.local/share/nvim/mason/bin/cspell-lsp"), "--stdio" },
-      --     filetypes = {
-      --       "lua", "python", "javascript", "typescript", "markdown", "text", "json",
-      --       "html", "css", "yaml", "gitcommit"
-      --     },
-      --     root_dir = require("lspconfig").util.root_pattern(".cspell.json", "cspell.config.js", ".git"),
-      --     single_file_support = true,
-      --     settings = {},
-      --   },
-      -- }
-      -- vim.keymap.set("n", "<leader>cs", function()
-      --   require("lspconfig").cspell.setup({
-      --     capabilities = capabilities,
-      --     init_options = {
-      --       configPath = vim.fn.expand("~/.cspell.json"),
-      --     },
-      --   })
-      --   vim.notify("Cspell enabled for this session", vim.log.levels.INFO)
-      -- end, { desc = "Enable Cspell LSP" })
-      --
+      -- Enable all configured servers
+      vim.lsp.enable({ "pylsp", "lua_ls", "ts_ls", "jsonls", "marksman" })
 
       -- Diagnostics configs
       vim.diagnostic.config({

@@ -25,6 +25,7 @@ return {
     end,
     config = function()
       require("neo-tree").setup({
+        use_libuv_file_watcher = true,
         enable_git_status = true,
         enable_diagnostics = true,
         default_component_configs = {

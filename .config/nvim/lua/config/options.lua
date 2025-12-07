@@ -11,3 +11,5 @@ vim.opt.autoindent = true
 
 vim.opt.number = true
 -- vim.opt.relativenumber = true
+
+vim.o.autoread = true
